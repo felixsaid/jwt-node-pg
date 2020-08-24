@@ -1,4 +1,5 @@
 import React, { Fragment, useState, useEffect } from "react";
+import { toast } from "react-toastify";
 
 const Dashboard = ({ setAuth }) => {
   const [name, setName] = useState("");
@@ -23,6 +24,8 @@ const Dashboard = ({ setAuth }) => {
 
     localStorage.removeItem("token");
     setAuth(false);
+
+    toast.success("User session was succesfully ended!");
   };
 
   useEffect(() => {
